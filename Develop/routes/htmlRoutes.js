@@ -1,9 +1,8 @@
-const express = require("expresss");
+const express = require("express");
 const htmlRouter = express.Router();
 
 htmlRouter.get('/notes', (req, res) =>
   res.sendFile(path.join(__dirname, 'notes.html')),
-  res.send("Successfully sent Notes HTML Page")
 );
 
 htmlRouter.get("*"), (req, res) => {
