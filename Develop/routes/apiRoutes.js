@@ -1,6 +1,6 @@
 const express = require("express");
 const apiRouter = express.Router();
-const notes = require("notes");
+// const notes = require("/notes");
 const noteData = require("./db/db.json");
 
 apiRouter.use("/notes", notes);
