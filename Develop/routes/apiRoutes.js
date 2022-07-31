@@ -1,24 +1,31 @@
 const express = require("express");
 const apiRouter = express.Router();
-const noteData = require("../db/db.json");
-
+const uuid = require("../helpers/uuid");
+// const {readAndAppend, readFromFile } = require("../db/store");
 
 apiRouter.get('/notes', (req, res) => {
-  console.log(noteData);
-  res.send(noteData);
+
+  readFromFile().then((err, notes) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(JSON.parse(notes));
+    }
+  })
 });
 
-// apiRouter.get("*"), (req, res) => {
-//   res.sendFile(path.join(__dirname,"public/index.html")); 
-// }; --> Do we need this??
+// POST Route for saving Notes
+apiRouter.post('/notes', (req, res) => {
 
-apiRouter.post("/notes", (req, res) => {
-  res.json(noteData)
-  writeToFile(destination, noteData);
-});
+    let noteID = uuid("id");
+    req.body["id"] = noteID;
+    notesData.push(req.body);
+    fs.writeFileSync("./db/db.json", JSON.stringify(notesData))
+  });
 
 // apiRouter.delete("/api/notes:id", (req, res) => {
-//   apiRouter.delete(req.params.id);
+// let   
+// apiRouter.delete(req.params.id);
 // });
 
 module.exports = apiRouter
