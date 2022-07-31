@@ -4,7 +4,7 @@ const newNote = require("../db/store");
 router.get("/api/notes", (req, res) => {
   newNote.getNotes().then((notes) => {
     console.log("here");
-    console.log(notes)
+    console.log(notes);
     return res.json(notes);
   }).catch((err) => res.status(404).json(err));
 
