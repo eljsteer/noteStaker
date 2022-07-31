@@ -1,31 +1,24 @@
-const express = require("express");
-const apiRouter = express.Router();
-const uuid = require("../helpers/uuid");
-// const {readAndAppend, readFromFile } = require("../db/store");
+const router = require("express").Router();
+const newNote = require("../db/store");
 
-apiRouter.get('/notes', (req, res) => {
+router.get("/notes", (req, res) => {
+  newNote.getNotes().then((notes) => {
+    console.log("here");
+    console.log(notes)
+    return res.json(notes);
+  }).catch((err) => res.status(404).json(err));
 
-  readFromFile().then((err, notes) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.json(JSON.parse(notes));
-    }
-  })
 });
 
-// POST Route for saving Notes
-apiRouter.post('/notes', (req, res) => {
+router.post("/notes", (req, res) => {
+  newNote.addNotes(req.body).then((notes) => {
+    return res.json(notes);
+  }).catch((err) => res.status(404).json(err));
 
-    let noteID = uuid("id");
-    req.body["id"] = noteID;
-    notesData.push(req.body);
-    fs.writeFileSync("./db/db.json", JSON.stringify(notesData))
-  });
+});
 
-// apiRouter.delete("/api/notes:id", (req, res) => {
-// let   
-// apiRouter.delete(req.params.id);
-// });
+router.delete("/notes:id", (req, res) => {
+  router.delete(req.params.id);
+});
 
-module.exports = apiRouter
+module.exports = router

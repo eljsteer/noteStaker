@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const apiRouter = require("./routes/apiRoutes");
+const router = require("./routes/apiRoutes");
 const htmlRouter = require("./routes/htmlRoutes");
 
 const app = express();
@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-app.use("/api", apiRouter);
+app.use("/api", router);
 app.use("/public", htmlRouter);
 
 app.listen(PORT, () =>
