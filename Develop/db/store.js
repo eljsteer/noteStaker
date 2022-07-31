@@ -6,10 +6,10 @@ const writeFileFun = util.promisify(fs.writeFileSync);
 
 class Notes {
   read() {
-    return readFileFun("../db/db.json", "utf-8");
+    return readFileFun("db/db.json", "utf-8");
   }
   write(note) {
-    return writeFileFun("../db/db.json", JSON.stringify(note))
+    return writeFileFun("db/db.json", JSON.stringify(note))
   }
   getNotes() {
     return this.read().then((notes) => {
