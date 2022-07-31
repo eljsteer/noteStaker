@@ -1,8 +1,8 @@
 const fs = require("fs");
 const util = require("util");
 const { v4: uuidv4 } = require("uuid")
-const readFileFun = util.promisify(fs.readFileSync);
-const writeFileFun = util.promisify(fs.writeFileSync);
+const readFileFun = util.promisify(fs.readFile);
+const writeFileFun = util.promisify(fs.writeFile);
 
 class Notes {
   read() {
