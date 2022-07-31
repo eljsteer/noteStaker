@@ -15,10 +15,11 @@ class Notes {
     return this.read().then((notes) => {
       let tempNotes
       try {
-        tempNotes = [].concat(JSON.parse(notes))
+        tempNotes = [].concat(JSON.parse(notes));
       } catch (error) {
         tempNotes = [];
       }
+      console.log(tempNotes);
       return tempNotes;
     })
   }
@@ -28,13 +29,12 @@ class Notes {
       title, 
       text, 
       id:uuidv4() 
-    }
+    };
     return this.getNotes()
       .then((notes) => [...notes, newNote])
       .then((newNote) => this.write(newNote))
       .then(() => newNote)
   }
 }
-
 
 module.exports = new Notes;
