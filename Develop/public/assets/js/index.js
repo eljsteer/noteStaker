@@ -31,7 +31,14 @@ const getNotes = () =>
     headers: {
       'Content-Type': 'application/json',
     },
-  });
+  } 
+  // .then(function(response) {
+  //   return response.json();
+  // })
+  // .then(function(data) {
+  //   console.log(data)
+  // })
+  );
 
 const saveNote = (note) =>
   fetch('/api/notes', {

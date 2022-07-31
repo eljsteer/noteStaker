@@ -3,6 +3,7 @@ const newNote = require("../db/store");
 
 router.get("/notes", (req, res) => {
   newNote.getNotes().then((notes) => {
+    console.log(notes);
     return res.json(notes);
   }).catch((err) => res.status(404).json(err));
 
