@@ -31,14 +31,7 @@ const getNotes = () =>
     headers: {
       'Content-Type': 'application/json',
     },
-  } 
-  // .then(function(response) {
-  //   return response.json();
-  // })
-  // .then(function(data) {
-  //   console.log(data)
-  // })
-  );
+  });
 
 const saveNote = (note) =>
   fetch('/api/notes', {
@@ -138,7 +131,7 @@ const renderNoteList = async (notes) => {
     liEl.classList.add('list-group-item');
 
     const spanEl = document.createElement('span');
-    // spanEl.classList.add('list-item-title');
+    spanEl.classList.add('list-item-title');
     spanEl.innerText = text;
     spanEl.addEventListener('click', handleNoteView);
 
@@ -172,7 +165,7 @@ const renderNoteList = async (notes) => {
     noteListItems.push(li);
   });
 
-  if (window.location.pathname === './notes') {
+  if (window.location.pathname === '/notes') {
     noteListItems.forEach((note) => noteList[0].append(note));
   }
 };
