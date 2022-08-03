@@ -17,13 +17,14 @@ router.post("/notes", (req, res) => {
 });
 
 router.delete("/notes/:id", (req, res) => {
-    const noteId = noteDb.findIndex(n => n.id === parseInt(req.params.id))
-    console.log(noteId);
-    if(!noteId) return res.status(404).send("Cannot find note with that id");
+    const noteId = noteDb.findIndex(n => n.id === (req.params.id))
+    console.log("noteId", noteId);
+    if(noteId === -1) return res.status(404).send("Cannot find note with that id");
   
     // delete Note
     noteDb.splice(noteId,1);
-    return write(noteDb).res.send("Note Successfully deleted");  
+    write(noteDb)
+    res.send("Note Successfully deleted");  
   }
   
 );
