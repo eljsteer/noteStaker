@@ -1,6 +1,6 @@
 
   
-  <h1 align="center">Prof.-Genie<h1>
+  <h1 align="center">NoteStaker<h1>
 
   [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
@@ -15,26 +15,24 @@
   - [Questions](#Questions)
 
   ## DESCRIPTION
-  .
+  Application to representing a Digital Notebook where the user can write and save notes.
   
-  ## INSTALLATION
-  1.
+  ## Application Deployment Links:
 
-  ## USAGE
-  * To use.........
-  * Link to Video an example of usage: 
-  [Usage Walkthrough Video](https://drive.google.com/file/d/14HeszosZ9DWsiRM-VMVC3M6rbq2m126B/view)
+  [The NoteStaker](https://radiant-thicket-41331.herokuapp.com/)
+
+  ## INSTALLATION
+  To install the application to view the code:
+
+  ##### From GitHub:
+
+  In your terminal: <br/>
+  `git clone <SSH URL Link Here>` <br/>
+  `code .`
 
   ## MEDIA
   #### Screenshot of Sample Application Output
   ![Profile Generator Output Screenshot](../public/media/profGenie-Screenshot.jpg)
-
-  ## TESTS
-  * To
-  * T
-  * Link to Video of running tests: 
-  [Test Walkthrough Video](https://drive.google.com/file/d/1AVyI4kPKufYB8W0siLwizYJo8GMaK9lg/view)
-
   
   ## LICENSE
   Project developed 2022 by Jason Steer,<br />
