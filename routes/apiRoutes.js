@@ -1,6 +1,6 @@
 const fs = require("fs");
 const router = require("express").Router();
-const { getNotes } = require("../db/store");
+const { getNotes, write } = require("../db/store");
 const newNote = require("../db/store");
 const noteDb = require("../db/db.json")
 
@@ -17,16 +17,14 @@ router.post("/notes", (req, res) => {
 });
 
 router.delete("/notes/:id", (req, res) => {
-    const noteId = noteDb.find(n => n.id === (req.params.id))
+    const noteId = noteDb.findIndex(n => n.id === parseInt(req.params.id))
     console.log(noteId);
     if(!noteId) return res.status(404).send("Cannot find note with that id");
   
     // delete Note
-    const index = noteDb.findIndex(note);
-    note.splice(index,1);
-    return fs.writeFileSync("../db/db.json", JSON.stringify(db));  
+    noteDb.splice(noteId,1);
+    return write(noteDb).res.send("Note Successfully deleted");  
   }
-
   
 );
 
