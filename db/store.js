@@ -3,6 +3,7 @@ const util = require("util");
 const { v4: uuidv4 } = require("uuid")
 const readFileFun = util.promisify(fs.readFile);
 const writeFileFun = util.promisify(fs.writeFile);
+// const noteDb = require("./db.json");
 
 class Notes {
   read() {
@@ -34,6 +35,17 @@ class Notes {
       .then((newNote) => this.write(newNote))
       .then(() => newNote)
   }
+  // deleteNote(note) {
+  //   const noteId = noteDb.find(n => n.id === (req.params.id))
+  //   console.log(noteId);
+  //   if(!noteId) return res.status(404).send("Cannot find note with that id");
+  
+  //   // delete Note
+  //   const index = db.findIndex(note);
+  //   note.splice(index,1);
+  //   return writeFileFun("db/db.json", JSON.stringify(note));  
+  // }
+
 }
 
 module.exports = new Notes;
