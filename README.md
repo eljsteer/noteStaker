@@ -8,10 +8,8 @@
   - [Description](#description)
   - [Installation](#Installation)
   - [Usage](#Usage)
-  - [Tests](#Tests)
+  - [Tests](#Media)
   - [License](#License)
-  - [Contributors](#Contributors)
-  - [Credits](#Credits)
   - [Questions](#Questions)
 
   ## DESCRIPTION
@@ -35,7 +33,7 @@
   ![New Note Save Screenshot](./public/assets/media/NoteStaker_NewNote_Save_SS.jpg)
 
    #### Screenshot of App User Interface and Delete Note Button
-  ![Note Delete Screenshot](./public/assets/media/NoteStaker_NewNote_Delete_SS.jpg.jpg)
+  ![Note Delete Screenshot](./public/assets/media/NoteStaker_NewNote_Delete_SS.jpg)
   
   ## LICENSE
   Project developed 2022 by Jason Steer,<br />
