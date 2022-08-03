@@ -31,16 +31,15 @@
   `code .`
 
   ## MEDIA
-  #### Screenshot of Sample Application Output
-  ![Profile Generator Output Screenshot](../public/media/profGenie-Screenshot.jpg)
+  #### Screenshot of App User Interface and Save Note Button
+  ![New Note Save Screenshot](./public/assets/media/NoteStaker_NewNote_Save_SS.jpg)
+
+   #### Screenshot of App User Interface and Delete Note Button
+  ![Note Delete Screenshot](./public/assets/media/NoteStaker_NewNote_Delete_SS.jpg.jpg)
   
   ## LICENSE
   Project developed 2022 by Jason Steer,<br />
   This application is licensed under the Apache 2.0 license.
-
-  ## CREDITS
-  * 
-
 
   ## QUESTIONS
   For any questions on this project please contact me via my Github link or email.<br />
